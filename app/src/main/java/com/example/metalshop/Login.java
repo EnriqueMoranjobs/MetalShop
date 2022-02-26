@@ -25,12 +25,8 @@ public class Login extends AppCompatActivity {
         Glide.with(this)
                 .load(R.drawable.hand)
                 .transition(DrawableTransitionOptions.withCrossFade(100))
-
                 .into(mHand);
-
-
     }
-
 
     // Method for Vaccinate button
     public void openMain(View v) {
