@@ -1,6 +1,5 @@
-package com.example.metalshop;
+package com.example.metalshop.fragments;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.metalshop.R;
 
 /**
  * A simple {@link Fragment} subclass.

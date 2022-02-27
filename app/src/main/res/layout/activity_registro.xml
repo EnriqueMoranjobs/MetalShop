@@ -12,28 +12,29 @@
         android:id="@+id/fondohand"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitStart"
-        />
+        android:scaleType="fitStart" />
     <!--    android:src="@drawable/girl"-->
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/icono"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.1"
-        android:background="@drawable/gradient">
+        android:background="@drawable/gradient"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-16dp">
 
     </View>
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til1"
@@ -81,34 +82,45 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/btnEntrar"
-        android:text="Entra"
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/til3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toTopOf="@id/til1"
         app:layout_constraintEnd_toEndOf="@id/guideline3"
         app:layout_constraintStart_toStartOf="@id/guideline2"
-        app:layout_constraintTop_toBottomOf="@id/til2"
+        app:startIconDrawable="@drawable/usericon"
 
-        style="@style/ButtonNormal" />
+        >
 
+        <EditText
+            android:id="@+id/idEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="email"></EditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnSinCuenta"
+        android:id="@+id/btnCrear"
         style="@style/ButtonNormal"
-        android:layout_marginTop="64dp"
-        android:onClick="crearCuenta"
-        android:text="¿No tienes cuenta?"
+        android:onClick="openMain"
+        android:text="CREAR CUENTA"
         app:layout_constraintEnd_toEndOf="@id/guideline3"
-
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline2"
+
         app:layout_constraintTop_toBottomOf="@id/til2" />
+
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="432dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="404dp"
         android:text="¿Quieres recordar tus credenciales?"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -118,14 +130,14 @@
         android:id="@+id/buttoninverse"
         style="@style/buttoninverse"
         android:layout_height="60dp"
-        android:layout_marginTop="172dp"
         android:onClick="openAdmin"
         android:text="Modo administrador"
         app:layout_constraintEnd_toEndOf="@id/guideline3"
-        app:layout_constraintHorizontal_bias="1.0"
-
         app:layout_constraintStart_toStartOf="@id/guideline2"
-        app:layout_constraintTop_toBottomOf="@id/btnEntrar" />
+        app:layout_constraintTop_toBottomOf="@id/btnCrear"
+
+        />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
