@@ -1,6 +1,8 @@
 package com.example.metalshop;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +21,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.example.metalshop.fragments.CambiarContrasenaFragment;
 
 import java.text.BreakIterator;
 
@@ -59,8 +62,9 @@ public class Login extends AppCompatActivity implements TextWatcher, CompoundBut
                 String getContraseña = etpass.getText().toString();
 
                 DbUsuarios dbUsuarios = new DbUsuarios(Login.this);
-                Cursor cursor = dbUsuarios.consultarUsuario(getNombreUsuario, getContraseña);
-                if (cursor.getCount() > 0) {
+                //  Cursor cursor = dbUsuarios.consultarUsuario(getNombreUsuario, getContraseña);
+                Usuario usuario = dbUsuarios.consultarUsuario(getNombreUsuario);
+                if (usuario != null && usuario.getContrasena().equals(getContraseña)) {
                     Toast.makeText(Login.this, "Bienvenido", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(v.getContext(), MainActivity.class);
                     startActivity(intent);
@@ -68,9 +72,7 @@ public class Login extends AppCompatActivity implements TextWatcher, CompoundBut
                 } else {
                     Toast.makeText(Login.this, "Error en el login", Toast.LENGTH_LONG).show();
                 }
-
             }
-
         });
 
 
@@ -108,7 +110,7 @@ public class Login extends AppCompatActivity implements TextWatcher, CompoundBut
         etpass.setText("");
     }
 
-//
+    //
     public void crearCuenta(View v) {
         Intent intent = new Intent(Login.this, RegistroActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -117,7 +119,16 @@ public class Login extends AppCompatActivity implements TextWatcher, CompoundBut
     }
 
     public void openAdmin(View v) {
-        Intent intent = new Intent(Login.this, MainActivity.class);
+        Intent intent = new Intent(Login.this, CambiarContrasena.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public  void openCambiaContrasena(View v){
+        Intent intent = new Intent(Login.this, CambiarContrasena.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 

@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 botonCD.setVisibility(View.GONE);
                 botonParche.setVisibility(View.GONE);
                 //agrega el Fragment en el contenedor, en este caso el FrameLayout con id `FrameLayout`.
-
             }
         });
         botonParche.setOnClickListener(new View.OnClickListener() {

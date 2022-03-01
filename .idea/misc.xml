@@ -5,11 +5,13 @@
       <map>
         <entry key="..\:/Users/Enrique/AndroidStudioProjects/MetalShop/app/src/main/res/drawable/gradient.xml" value="0.1" />
         <entry key="..\:/Users/Enrique/AndroidStudioProjects/MetalShop/app/src/main/res/layout/activity_administrador.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Enrique/AndroidStudioProjects/MetalShop/app/src/main/res/layout/activity_cambiar_contrasena.xml" value="0.1609375" />
         <entry key="..\:/Users/Enrique/AndroidStudioProjects/MetalShop/app/src/main/res/layout/activity_cesta.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Enrique/AndroidStudioProjects/MetalShop/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/Enrique/AndroidStudioProjects/MetalShop/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/Enrique/AndroidStudioProjects/MetalShop/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Enrique/AndroidStudioProjects/MetalShop/app/src/main/res/layout/activity_registro.xml" value="0.264" />
         <entry key="..\:/Users/Enrique/AndroidStudioProjects/MetalShop/app/src/main/res/layout/fragment_c_d.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Enrique/AndroidStudioProjects/MetalShop/app/src/main/res/layout/fragment_cambiar_contrasena.xml" value="0.264" />
         <entry key="..\:/Users/Enrique/AndroidStudioProjects/MetalShop/app/src/main/res/layout/fragment_camisetas.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/Enrique/AndroidStudioProjects/MetalShop/app/src/main/res/layout/row.xml" value="0.25416666666666665" />
       </map>
