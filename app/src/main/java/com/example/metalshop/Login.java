@@ -1,13 +1,12 @@
 package com.example.metalshop;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
+
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -21,16 +20,14 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import com.example.metalshop.fragments.CambiarContrasenaFragment;
+
 
 import java.text.BreakIterator;
 
-public class Login extends AppCompatActivity implements TextWatcher, CompoundButton.OnCheckedChangeListener {
+public class Login extends AppCompatActivity  {
 
     private Button botonEntrar;
-
     private Button botonSinCuenta;
-
     private DatabaseHelper basedatos;
 
     private EditText etUsername, etpass;
@@ -48,12 +45,12 @@ public class Login extends AppCompatActivity implements TextWatcher, CompoundBut
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         basedatos = new DatabaseHelper(Login.this);
-
         botonEntrar = (Button) findViewById(R.id.btnEntrar);
         botonSinCuenta = (Button) findViewById(R.id.btnSinCuenta);
-
         etUsername = (EditText) findViewById(R.id.idUser);
         etpass = (EditText) findViewById(R.id.idPassword);
+
+
 
         botonEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,32 +72,6 @@ public class Login extends AppCompatActivity implements TextWatcher, CompoundBut
             }
         });
 
-
-        sharedPreferences =
-
-                getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-
-        editor = sharedPreferences.edit();
-        etUsername =
-
-                findViewById(R.id.idUser);
-
-        etpass =
-
-                findViewById(R.id.idPassword);
-
-        rememberCheckbox =
-
-                findViewById(R.id.checkBox);
-
-        if (sharedPreferences.getBoolean(KEY_REMEMBER, false))
-            rememberCheckbox.setChecked(true);
-        else
-            rememberCheckbox.setChecked(false);
-
-        etUsername.setText(sharedPreferences.getString(KEY_USERNAME, ""));
-        etpass.addTextChangedListener(this);
-        rememberCheckbox.setOnCheckedChangeListener(this);
     }
 
 
@@ -125,7 +96,7 @@ public class Login extends AppCompatActivity implements TextWatcher, CompoundBut
         startActivity(intent);
     }
 
-    public  void openCambiaContrasena(View v){
+    public void openCambiaContrasena(View v) {
         Intent intent = new Intent(Login.this, CambiarContrasena.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -133,39 +104,6 @@ public class Login extends AppCompatActivity implements TextWatcher, CompoundBut
     }
 
 
-    @Override
-    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-    }
-
-    @Override
-    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-        managePrefs();
-    }
-
-    @Override
-    public void afterTextChanged(Editable editable) {
-
-    }
-
-    @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-        managePrefs();
-    }
-
-    private void managePrefs() {
-        if (rememberCheckbox.isChecked()) {
-            editor.putString(KEY_USERNAME, etUsername.getText().toString().trim());
-            editor.putString(KEY_PASS, etpass.getText().toString().trim());
-            editor.putBoolean(KEY_REMEMBER, true);
-            editor.apply();
-        } else {
-            editor.putBoolean(KEY_REMEMBER, false);
-            editor.remove(KEY_PASS);
-            editor.remove(KEY_USERNAME);
-            editor.apply();
-        }
-    }
 }
 
 

@@ -3,6 +3,8 @@ package com.example.metalshop.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,7 @@ import com.example.metalshop.R;
  * create an instance of this fragment.
  */
 public class FragmentCamisetas extends Fragment {
+    View view;
 
 
 
@@ -61,6 +64,14 @@ public class FragmentCamisetas extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_camisetas, container, false);
+
+        return view;
+    }
+
+    private void iniciarRecycler(View view){
+        RecyclerView rv = view.findViewById(R.id.recyclerview);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        rv.setLayoutManager(layoutManager);
+        rv.setAdapter();
     }
 }

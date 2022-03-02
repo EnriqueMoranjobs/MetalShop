@@ -18,7 +18,6 @@ import java.util.ArrayList;
 public class Administrador extends AppCompatActivity {
     private MiAdaptador adapter;
     ArrayList<Productos> listaProductos = new ArrayList<>();
-
     RecyclerView recyclerView;
     EditText input;
     TextView output;
