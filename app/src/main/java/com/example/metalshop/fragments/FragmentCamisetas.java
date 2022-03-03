@@ -48,12 +48,14 @@ public class FragmentCamisetas extends Fragment {
         MiAdaptador miAdaptador = new MiAdaptador(getContext(),listaProductos,this);
         recyclerView.setAdapter(miAdaptador);
 
-        listaProductos.add(new CD("Metallica", 10, 20, 60));
-        listaProductos.add(new CD("Iron Maiden", 10, 20, 60));
-        listaProductos.add(new CD("Slayer", 10, 20, 60));
-        listaProductos.add(new Camisetas("Metallica", 10, 20, "L"));
-        listaProductos.add(new Camisetas("Iron Maiden", 10, 20, "L"));
-        listaProductos.add(new Camisetas("Slayer", 10, 20, "L"));
+
+
+        listaProductos.add(new CD("Metallica-KillEmAll", 10, 20, 60));
+        listaProductos.add(new CD("Iron Maiden-Somewhere in Time", 10, 20, 60));
+        listaProductos.add(new CD("Slayer-Reign in blood", 10, 20, 60));
+        listaProductos.add(new Camisetas("Metallica-KillEmAll", 10, 20, "L"));
+        listaProductos.add(new Camisetas("Iron Maiden-Somewhere in Time", 10, 20, "L"));
+        listaProductos.add(new Camisetas("Slayer-Reign in blood", 10, 20, "L"));
 
 
 
