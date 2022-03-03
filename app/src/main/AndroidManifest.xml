@@ -19,9 +19,6 @@
             android:name=".RegistroActivity"
             android:exported="true" />
         <activity
-            android:name=".Administrador"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity

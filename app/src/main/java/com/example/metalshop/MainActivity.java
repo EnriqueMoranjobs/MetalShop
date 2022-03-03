@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
         botonCamiseta = findViewById(R.id.buttonCamisetas);
         botonCD = findViewById(R.id.buttonCD);
-        botonParche = findViewById(R.id.buttonParches);
 
         botonCamiseta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.idMain,fragment).commit();
                 botonCamiseta.setVisibility(View.GONE);
                 botonCD.setVisibility(View.GONE);
-                botonParche.setVisibility(View.GONE);
                 //agrega el Fragment en el contenedor, en este caso el FrameLayout con id `FrameLayout`.
 
             }
@@ -50,27 +48,9 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.idMain,fragment).commit();
                 botonCamiseta.setVisibility(View.GONE);
                 botonCD.setVisibility(View.GONE);
-                botonParche.setVisibility(View.GONE);
                 //agrega el Fragment en el contenedor, en este caso el FrameLayout con id `FrameLayout`.
             }
         });
-        botonParche.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                fragment = new FragmentCamisetas();
-                //Obtiene el Fragment manager
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.idMain,fragment).commit();
-                botonCamiseta.setVisibility(View.GONE);
-                botonCD.setVisibility(View.GONE);
-                botonParche.setVisibility(View.GONE);
-                //agrega el Fragment en el contenedor, en este caso el FrameLayout con id `FrameLayout`.
-
-            }
-        });
-
-
-
 
     }
 }
