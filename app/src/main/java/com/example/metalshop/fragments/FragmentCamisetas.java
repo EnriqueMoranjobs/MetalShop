@@ -55,6 +55,9 @@ public class FragmentCamisetas extends Fragment {
         listaProductos.add(new Camisetas("Iron Maiden", 10, 20, "L"));
         listaProductos.add(new Camisetas("Slayer", 10, 20, "L"));
 
-        return recyclerView;
+
+
+
+        return vista;
     }
 }

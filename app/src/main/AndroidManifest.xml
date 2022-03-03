@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MetalShop">
         <activity
+            android:name=".ActivityCompra"
+            android:exported="false" />
+        <activity
             android:name=".CambiarContrasena"
             android:exported="false" />
         <activity
